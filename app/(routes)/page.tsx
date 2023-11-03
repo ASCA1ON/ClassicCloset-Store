@@ -12,6 +12,7 @@ const HomePage = async () => {
     <Container>
       <div className="space-y-10 pb-20">
         {billboard && <Billboard data={billboard} />}
+
         {/* {billboard ? (
           <Billboard data={billboard} />
         ) : (
