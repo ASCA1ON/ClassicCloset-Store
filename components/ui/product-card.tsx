@@ -7,19 +7,24 @@ import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 import IconButton from "./icon-button";
 import Currency from "./currency";
+import usePreviewModal from "@/hooks/use-preview-modal";
 
 interface ProductCard {
   data: Product;
 }
 
 const ProductCard: React.FC<ProductCard> = ({ data }) => {
+  const previewModal = usePreviewModal();
   const router = useRouter();
 
   const handleClick = () => {
-      router.push(`/product/${data?.id}`);
+    router.push(`/product/${data?.id}`);
   };
 
-  const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {};
+  const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation()
+    previewModal.onOpen(data)
+  };
 
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {};
 

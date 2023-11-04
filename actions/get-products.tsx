@@ -22,7 +22,7 @@ interface Query {
       },
     });
   
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' });
   
     return res.json();
   };
