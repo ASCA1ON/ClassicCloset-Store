@@ -3,6 +3,8 @@
 
 This is the customer-facing storefront for the Classic Closet e-commerce project. It displays the products, categories, featured items, and more that are managed through the admin dashboard.
 
+## Make sure admin is running
+
 ## Features
 
 - Displays products by category
